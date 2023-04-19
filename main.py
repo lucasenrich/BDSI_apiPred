@@ -41,7 +41,7 @@ def read_root():
 
 
 @app.get("/run/{iy}")
-def get_raster_google_earth(iy: int,TCI: bool = False,predict: bool = False,anio: int = 2022):
+def get_raster_google_earth(iy: int,TCI: bool = False,predict: bool = True,anio: int = 2022):
     _, of = mk.get_raster_gearth(df,iy=iy,anio=anio,delta = 0.01, TCI = TCI,path_output= os.getcwd())
     gdf = df[df.renabap_id==iy].reset_index(drop=True)
     min_lon, min_lat, max_lon, max_lat = gdf.geometry[0].bounds
@@ -50,5 +50,6 @@ def get_raster_google_earth(iy: int,TCI: bool = False,predict: bool = False,anio
     #http://localhost:8000/raster_google_earth/10?TCI=True&predict=False
     if predict:
         _, predtif = mk.predict_model(pf,anio,iy)
-        
-    return pf
+        return predtif
+    else:
+        return pf 

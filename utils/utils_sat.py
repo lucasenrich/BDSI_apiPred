@@ -104,8 +104,8 @@ def croppge(of,nom,anio,min_lon, min_lat, max_lon, max_lat, delta=0, idx=0, TCI 
             fl_300 = False
     if not fl_300:
             #os.remove(cropped_file)
-            croppge(of,nom,min_lon, min_lat, max_lon, max_lat,delta = 0.005,TCI = TCI, remove_original = remove_original)
-    os.remove(of)
+            croppge(of,nom,anio,min_lon, min_lat, max_lon, max_lat,delta = 0.005,TCI = TCI, remove_original = remove_original)
+    #os.remove(of)
     return cropped_file
 
 def custom_merge_works(old_data, new_data, old_nodata, new_nodata, index=None, roff=None, coff=None):
@@ -174,7 +174,7 @@ def predict_model(path,anio,nom,sw = 3):
         })
 
 
-    outputdir = "./output_pred/"#os.path.join("C:/Users/HP/OneDrive/pytorch/torchgeo/renabap/output",prov)
+    outputdir = "C:/Users/HP/OneDrive/VizApp/apiPred/apiPred/output_pred/"#"./output_pred/"#os.path.join("C:/Users/HP/OneDrive/pytorch/torchgeo/renabap/output",prov)
     if not os.path.isdir(outputdir):
         os.mkdir(outputdir)
 
@@ -188,7 +188,7 @@ def predict_model(path,anio,nom,sw = 3):
         k.close()
     for h in files_to_mosaic:
         os.remove(h)
-    shutil.rmtree(imagespath)
+    #shutil.rmtree(imagespath)
     
     return True,os.path.join(outputdir,fname)
 
