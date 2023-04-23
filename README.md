@@ -52,6 +52,11 @@ https://github.com/lucasenrich/BDSI_apiR
 https://github.com/lucasenrich/BDSI_vizapp
 
 
+## Pending (TO-DO)
 
+Future work is about:
+
++ Database management (PostGIS)
++ Dockerize
 
 
