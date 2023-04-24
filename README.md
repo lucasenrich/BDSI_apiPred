@@ -1,5 +1,8 @@
 # Builded Detection with Satellite Imagery (BDSI)
 
+Project Flowchart
+
+![image](./img/flow.jpg)
 
 This project consist in 4 repositories:
 
